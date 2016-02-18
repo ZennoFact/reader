@@ -1,0 +1,28 @@
+{
+  "name": "reapp",
+  "description": "for KCG Students",
+  "main": "main.js",
+  "authors": [
+    "ZennoFact <zenno04.g@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "markdown"
+  ],
+  "homepage": "https://github.com/ZennoFact/reader",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "marked": "~0.3.5"
+  }
+}

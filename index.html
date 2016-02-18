@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="reapp">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Re:ader</title>
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="./css/style.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body  ng-controller="MainController as main">
+  <div class="col-md-3">
+    <!-- パネルで囲む -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="input-group">
+          <span class="input-group-addon">
+	      	  <i class="glyphicon glyphicon-search"></i>
+        	</span>
+          <input type="text" class="form-control" placeholder="Search" ng-model='search' ng-trim='false'>
+        </div>
+      </div>
+      <ul class="list-group">
+        <li ng-repeat="file in main.fileList | filter:search | orderBy: 'title'">
+          <a class="list-group-item" ng-click="main.getFile(file)">
+            <span><i class="glyphicon glyphicon-tag"></i></span>{{file.title}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="main" class="col-md-9">
+    <div ng-if="main.fileText">
+      <div md-preview="main.fileText"></div>
+    </div>
+  </div>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/marked/lib/marked.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
